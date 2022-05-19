@@ -1,0 +1,3 @@
+# wc
+
+word count command.
