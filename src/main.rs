@@ -9,7 +9,7 @@ fn main() -> io::Result<()> {
     let mut twc = 0;
     let mut tbc = 0;
 
-    for arg in args.iter() {
+    for arg in &args {
         let f = File::open(arg)?;
         let reader = BufReader::new(f);
 
@@ -31,7 +31,7 @@ fn main() -> io::Result<()> {
         twc += wc;
         tbc += bc;
 
-        println!("{:>8} {:>7} {:>7} {:>7}", lc, wc, bc, arg);
+        println!("{:>8} {:>7} {:>7} {}", lc, wc, bc, arg);
     }
 
     if args.len() > 1 {
